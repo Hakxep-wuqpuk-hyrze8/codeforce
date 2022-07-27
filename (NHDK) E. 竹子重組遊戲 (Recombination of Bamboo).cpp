@@ -71,13 +71,11 @@ bool is_palin(int a, int b) {
 
     int lca = get_lca(a, b);
     int lcaTag = mp[lca] - 'a';
-    //cout << mp[lca] << '\n';
 
     for (int i = 0; i < 26; i++) {
         int charNum = dp[a][i] + dp[b][i];
         if (i == lcaTag) charNum--;
         if (charNum % 2 == 1) check++;
-        //cout << charNum << ' ';
         if (check == 2) return false;
      }
 
@@ -122,18 +120,3 @@ int main() {
 
     return 0;
 }
-/*
-7 5
-a b a c a b c
-1 2
-2 3
-3 4
-2 5
-1 6
-6 7
-3 6
-4 7
-4 5
-5 7
-2 5
-*/
